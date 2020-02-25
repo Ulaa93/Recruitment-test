@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+table {
+  border-spacing: 0px;
+  border-collapse: inherit;
+}
+.wrapper {
+  margin: 0 auto;
+}
+
+thead tr {
+  background-color: #1c3352;
+  border-radius: 20px;
+}
+thead th {
+  font-size: 1.2em;
+  padding: 1em 0.6em;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+th {
+  font-size: 1.2em;
+  width: 18vw;
+  max-width: 300px;
+  padding: 1em;
+  border-spacing: 0px;
+}
+
+tr {
+  border: 1px solid black;
+  border-spacing: 0px;
+}
+
+tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.company-id {
+  font-weight: bold;
+}
+
+th:first-of-type {
+  width: 60px;
+}
