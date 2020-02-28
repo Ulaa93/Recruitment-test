@@ -2,6 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+.search-wrap {
+  width: 100%;
+  text-align: center;
+  margin: 0.8 auto;
+}
+#search,
+label {
+  margin: 0.8em auto;
+  font-size: 1.2em;
+  padding: 0.4em;
+}
+#search {
+  border-radius: 10px;
 }
 table {
   border-spacing: 0px;
@@ -13,21 +28,25 @@ table {
 
 thead tr {
   background-color: #1c3352;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 thead th {
   font-size: 1.2em;
   padding: 1em 0.6em;
-  font-weight: bold;
+  font-weight: 700;
   color: white;
   text-transform: uppercase;
+  cursor: pointer;
 }
-th {
+th,
+td {
   font-size: 1.2em;
-  width: 18vw;
+  width: 14vw;
   max-width: 300px;
-  padding: 1em;
+  padding: 1em 0.6em;
   border-spacing: 0px;
+  font-weight: 400;
+  text-align: center;
 }
 
 tr {
@@ -42,6 +61,56 @@ tr:nth-of-type(even) {
   font-weight: bold;
 }
 
-th:first-of-type {
+td:first-of-type {
   width: 60px;
+  font-weight: 700;
+}
+#pagination {
+  text-align: center;
+}
+button {
+  font-size: 1em;
+  color: white;
+  background-color: #1c3352;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+.active {
+  background-color: #40454d;
+}
+
+@media (max-width: 800px) {
+  thead th {
+    font-size: 1em;
+    padding: 0.8em 0.4em;
+  }
+  th,
+  td {
+    font-size: 1em;
+    padding: 0.8em 0.4em;
+  }
+}
+
+@media (max-width: 600px) {
+  thead th {
+    font-size: 0.7em;
+    /* padding: 0.7em 0.4em; */
+  }
+  th,
+  td {
+    font-size: 0.7em;
+    /* padding: 0.5em 0.4em; */
+  }
+  button {
+    /* font-size: 1.2em; */
+    padding: 0.3em 0.5em;
+  }
+
+  #search,
+  label {
+    margin: 0.8em auto;
+    font-size: 1em;
+    /* padding: 0.4em; */
+  }
 }

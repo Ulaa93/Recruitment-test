@@ -4,24 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Companies</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="search-wrap">
+      <label for="search">Search Company: </label>
+      <input type="text" id="search" placeholder="Type searched fraze..." />
+    </div>
+    <!-- <i class="searchIcon">search</i> -->
     <div>
-      <table class="wrapper">
+      <table class="wrapper" id="list">
         <thead>
           <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>city</th>
-            <th>total income</th>
-            <th>average income</th>
-            <th>last month income</th>
+            <th class="sort-id">id</th>
+            <th class="sort-name">name</th>
+            <th class="sort-city">city</th>
+            <th class="sort-total">total income</th>
+            <th class="sort-average">average income</th>
+            <th class="sort-last">last month income</th>
           </tr>
         </thead>
         <tbody class="appnew"></tbody>
       </table>
     </div>
+    <div id="pagination"></div>
     <script src="script.js"></script>
   </body>
 </html>
