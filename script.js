@@ -15,6 +15,8 @@ const getIncome = param => {
     .then(response => {
       if (response.ok) {
         return response.json();
+      } else {
+        throw new Error('Something went wrong');
       }
     })
     .then(res => {
@@ -56,6 +58,8 @@ const allData = () => {
     .then(response => {
       if (response.ok) {
         return response.json();
+      } else {
+        throw new Error('Something went wrong');
       }
     })
     .then(res => {
