@@ -129,6 +129,8 @@ function paginationButton(page, companies) {
 
 //Sort
 function sortFun(param, order) {
+  currentPage = 1;
+  page = 1;
   companies = companies.sort((a, b) => {
     if (typeof a[param] === 'number') {
       if (order) {
