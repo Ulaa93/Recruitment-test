@@ -148,6 +148,8 @@ function sortFun(param, order) {
 
 //Search
 function searchData() {
+  currentPage = 1;
+  page = 1;
   filterData = searchInput.value.toUpperCase();
   result = [];
   for (let i = 0; i < companies.length; i++) {
