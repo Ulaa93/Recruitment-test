@@ -69,6 +69,13 @@ button {
 .active {
   background-color: #40454d;
 }
+span {
+  display: block;
+}
+i {
+  margin-top: 0.2em;
+  font-size: 1em;
+}
 @media (max-width: 800px) {
   thead th {
     font-size: 1em;

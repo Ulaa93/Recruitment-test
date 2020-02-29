@@ -180,10 +180,27 @@ searchInput.addEventListener('keyup', () => {
 
 for (let c = 0; c < menuElements.length; c++) {
   let order = false;
+  let sortIcon = menuElements[c].querySelector('.sort-icon');
   menuElements[c].addEventListener('click', () => {
+  
     let keys = Object.keys(companies[0]);
     let accurateKey = keys[c];
+    for (let i = 0; i < menuElements.length; i++) {
+      if (
+        menuElements[i].querySelector('i') &&
+        menuElements[i] != menuElements[c]
+      ) {
+        menuElements[i].querySelector('.sort-icon').innerHTML = '';
+        order = false;
+      }
+    }
     order = !order;
+    if (order) {
+      sortIcon.innerHTML = '<i class="fas fa-sort-up"></i>';
+    }
+    if (!order) {
+      sortIcon.innerHTML = '<i class="fas fa-sort-down"></i>';
+    }
     sortFun(accurateKey, order);
     displayData(companies, app, rows, currentPage);
     setupPagination(companies, paginationEl, rows);
