@@ -7,7 +7,6 @@
 .search-wrap {
   width: 100%;
   text-align: center;
-  margin: 0.8 auto;
 }
 #search,
 label {
@@ -25,14 +24,10 @@ table {
 .wrapper {
   margin: 0 auto;
 }
-
 thead tr {
   background-color: #1c3352;
-  /* border-radius: 20px; */
 }
 thead th {
-  font-size: 1.2em;
-  padding: 1em 0.6em;
   font-weight: 700;
   color: white;
   text-transform: uppercase;
@@ -45,24 +40,19 @@ td {
   max-width: 300px;
   padding: 1em 0.6em;
   border-spacing: 0px;
-  font-weight: 400;
   text-align: center;
 }
-
 tr {
   border: 1px solid black;
   border-spacing: 0px;
 }
-
 tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 .company-id {
   font-weight: bold;
 }
-
 td:first-of-type {
-  width: 60px;
   font-weight: 700;
 }
 #pagination {
@@ -95,22 +85,31 @@ button {
 @media (max-width: 600px) {
   thead th {
     font-size: 0.7em;
-    /* padding: 0.7em 0.4em; */
   }
   th,
   td {
     font-size: 0.7em;
-    /* padding: 0.5em 0.4em; */
   }
   button {
-    /* font-size: 1.2em; */
     padding: 0.3em 0.5em;
   }
-
   #search,
   label {
     margin: 0.8em auto;
     font-size: 1em;
-    /* padding: 0.4em; */
+  }
+}
+
+@media (max-width: 420px) {
+  thead th {
+    font-size: 0.5em;
+  }
+  th,
+  td {
+    font-size: 0.5em;
+  }
+  #search,
+  label {
+    font-size: 0.8em;
   }
 }
