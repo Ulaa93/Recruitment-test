@@ -8,7 +8,7 @@ const incomesUrl = 'https://recruitment.hal.skygate.io/incomes/';
 
 let companies = [];
 let lastMonth = [];
-
+let result = [];
 //Get incomes for currency company
 const getIncome = param => {
   return fetch(`${incomesUrl}${param.id}`)
@@ -128,21 +128,21 @@ function paginationButton(page, companies) {
 }
 
 //Sort
-function sortFun(param, order) {
+function sortFun(param, key, order) {
   currentPage = 1;
   page = 1;
-  companies = companies.sort((a, b) => {
-    if (typeof a[param] === 'number') {
+  param = param.sort((a, b) => {
+    if (typeof a[key] === 'number') {
       if (order) {
-        return a[param] - b[param];
+        return a[key] - b[key];
       } else {
-        return b[param] - a[param];
+        return b[key] - a[key];
       }
-    } else if (typeof a[param] === 'string') {
+    } else if (typeof a[key] === 'string') {
       if (order) {
-        return a[param].localeCompare(b[param]);
+        return a[key].localeCompare(b[key]);
       } else {
-        return b[param].localeCompare(a[param]);
+        return b[key].localeCompare(a[key]);
       }
     }
   });
@@ -182,7 +182,6 @@ for (let c = 0; c < menuElements.length; c++) {
   let order = false;
   let sortIcon = menuElements[c].querySelector('.sort-icon');
   menuElements[c].addEventListener('click', () => {
-  
     let keys = Object.keys(companies[0]);
     let accurateKey = keys[c];
     for (let i = 0; i < menuElements.length; i++) {
@@ -201,8 +200,15 @@ for (let c = 0; c < menuElements.length; c++) {
     if (!order) {
       sortIcon.innerHTML = '<i class="fas fa-sort-down"></i>';
     }
-    sortFun(accurateKey, order);
-    displayData(companies, app, rows, currentPage);
-    setupPagination(companies, paginationEl, rows);
+
+    if (result.length > 0) {
+      sortFun(result, accurateKey, order);
+      displayData(result, app, rows, currentPage);
+      setupPagination(result, paginationEl, rows);
+    } else {
+      sortFun(companies, accurateKey, order);
+      displayData(companies, app, rows, currentPage);
+      setupPagination(companies, paginationEl, rows);
+    }
   });
 }
