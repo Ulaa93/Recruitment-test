@@ -181,9 +181,14 @@ searchInput.addEventListener('keyup', () => {
 for (let c = 0; c < menuElements.length; c++) {
   let order = false;
   let sortIcon = menuElements[c].querySelector('.sort-icon');
+  // if(result.length=0){
+  //   menuElements[i].querySelector('.sort-icon').innerHTML = '';
+
+  // }
   menuElements[c].addEventListener('click', () => {
     let keys = Object.keys(companies[0]);
     let accurateKey = keys[c];
+    searchInput.value = '';
     for (let i = 0; i < menuElements.length; i++) {
       if (
         menuElements[i].querySelector('i') &&
@@ -200,15 +205,8 @@ for (let c = 0; c < menuElements.length; c++) {
     if (!order) {
       sortIcon.innerHTML = '<i class="fas fa-sort-down"></i>';
     }
-
-    if (result.length > 0) {
-      sortFun(result, accurateKey, order);
-      displayData(result, app, rows, currentPage);
-      setupPagination(result, paginationEl, rows);
-    } else {
-      sortFun(companies, accurateKey, order);
-      displayData(companies, app, rows, currentPage);
-      setupPagination(companies, paginationEl, rows);
-    }
+    sortFun(companies, accurateKey, order);
+    displayData(companies, app, rows, currentPage);
+    setupPagination(companies, paginationEl, rows);
   });
 }
