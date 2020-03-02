@@ -1,3 +1,5 @@
+
+
 const app = document.querySelector('.appnew');
 const paginationEl = document.querySelector('#pagination');
 const searchInput = document.querySelector('#search');
